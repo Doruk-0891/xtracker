@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container {
+    outline: 1px solid black;
+    padding: 1rem;
+}
+
+.form-container > * {
+    margin-top: 1rem;
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
