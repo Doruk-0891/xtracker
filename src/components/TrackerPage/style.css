@@ -1,7 +1,10 @@
-.container {
+.tracker-container {
     width: 90%;
     margin: auto;
-    display: block;
+}
+
+.tracker-container > * {
+    margin-bottom: 50px;
 }
 
 .header {
@@ -15,4 +18,37 @@ button {
     padding: 0.5rem 1rem;
     font-weight: bold;
     cursor: pointer;
+}
+
+.pills {
+    border-radius: 1rem;
+    padding: 0.4rem;
+    color: white;
+    text-align: center;
+}
+
+.green {
+    background-color: green;
+}
+.red {
+    background-color: red;
+}
+
+.expense-form-container {
+    width: 600px;
+    padding: 1rem 2rem;
+    background-color: #d8d5d5;
+}
+
+.form-first-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.expense-form-container > form > div {
+
 }

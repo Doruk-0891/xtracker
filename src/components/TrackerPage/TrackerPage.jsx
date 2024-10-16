@@ -3,6 +3,8 @@ import './style.css'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import ExpenseTable from './ExpenseTable';
+import NewExpenseForm from './NewExpenseForm';
+import TransactionsSection from './Transactions/TransactionsSection';
 
 const TrackerPage = () => {
   const navigate = useNavigate();
@@ -13,12 +15,16 @@ const TrackerPage = () => {
   }
 
   return (
-    <div className='container'>
+    <div className='tracker-container'>
       <div className='header'>
         <h2>{userName}'s Monthly Expenditure</h2>
         <button onClick={navigateToNewTrackerPage}>New/Update Tracker</button>
       </div>
       <ExpenseTable />
+      <hr />
+      <NewExpenseForm />
+      <hr />
+      <TransactionsSection />
     </div>
   )
 }
