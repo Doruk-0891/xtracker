@@ -40,8 +40,9 @@ button {
     background-color: #d8d5d5;
 }
 
-.form-first-row {
+.expense-form-input {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 

@@ -35,12 +35,12 @@ const NewExpenseForm = () => {
             <div className='expense-form-input'>
                 <div>
                     <label htmlFor='expense-name'>Expense Name: </label>
-                    <input id='expense-name' type='text' value={expenseName} onChange={(e) => setExpenseName(e.target.value)} />
+                    <input id='expense-name' type='text' value={expenseName} onChange={(e) => setExpenseName(e.target.value)} required />
                 </div>
                 
                 <div>
                     <label htmlFor='category-select'>Select Category: </label>
-                    <select id='category-select' value={expenseCategory} onChange={(e) =>setExpenseCategory(e.target.value)}>
+                    <select id='category-select' required value={expenseCategory} onChange={(e) =>setExpenseCategory(e.target.value)}>
                         <option value="" disabled>--select--</option>
                         <option value={'Food'}>Food</option>
                         <option value={'Travel'}>Travel</option>
@@ -48,13 +48,13 @@ const NewExpenseForm = () => {
                         <option value={'Others'}>Others</option>
                     </select>
                 </div>
+                <div>
+                    <label htmlFor='expense-amount'>Expense Amount: </label>
+                    <input type='number' required id='expense-amount' value={expenseAmount} onChange={(e) => e.target.value==='' ? setExpenseAmount('') : setExpenseAmount(parseInt(e.target.value))} />
+                </div>
                 
             </div>
 
-            <div>
-                <label htmlFor='expense-amount'>Expense Amount: </label>
-                <input type='number' id='expense-amount' value={expenseAmount} onChange={(e) => e.target.value==='' ? setExpenseAmount('') : setExpenseAmount(parseInt(e.target.value))} />
-            </div>
             <div>
                 <input type='submit' />
             </div>

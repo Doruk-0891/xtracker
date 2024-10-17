@@ -75,12 +75,12 @@ const NewTrackerPage = () => {
         <form name='landing-page-form' className='form-container' onSubmit={(e) => e.preventDefault()}>
             <div>
                 <label htmlFor='name'>Enter your name: </label>
-                <input id='name' type='text' value={userName} onChange={setUserName} />
+                <input id='name' type='text' required value={userName} onChange={setUserName} />
             </div>
 
             <div>
                 <label htmlFor='budget'>Enter your monthly budget: </label>
-                <input type='number' id='budget' value={monthlyBudget} onChange={setMonthlyBudget} />
+                <input type='number' id='budget'required  value={monthlyBudget} onChange={setMonthlyBudget} />
             </div>
 
             <BalanceTable categoricalBudget={categoricalBudget} setCategoricalBudget={setCategoricalBudget} />
