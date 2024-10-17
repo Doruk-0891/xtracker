@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import LimitPills from './LimitPills';
 
 const ExpenseTable = () => {
-    const monthlyBudget = useSelector(state => state.userReducer.monthlyBudget);
+    const monthlyBudget = parseInt(useSelector(state => state.userReducer.monthlyBudget)) || '';
     const totalExpense = useSelector(state =>  state.expenseReducer.totalExpense);
     const categoricalBudget = useSelector(state => state.userReducer.categoricalBudget);
     const categoricalExpense = useSelector(state => state.expenseReducer.categoricalExpense);

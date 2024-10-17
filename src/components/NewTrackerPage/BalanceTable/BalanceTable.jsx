@@ -16,15 +16,15 @@ const BalanceTable = (props) => {
             <tbody>
                 <tr>
                     <td>
-                        <input type='number' value={categoricalBudget.food} onChange={(e) => setCategoricalBudget(e.target.value, 'food')} />
+                        <input type='number' id='food' value={categoricalBudget.food} onChange={(e) => setCategoricalBudget(e.target.value, 'food')} />
                     </td>
 
                     <td>
-                        <input type='number' value={categoricalBudget.travel} onChange={(e) => setCategoricalBudget(e.target.value, 'travel')} />
+                        <input type='number' id='travel' value={categoricalBudget.travel} onChange={(e) => setCategoricalBudget(e.target.value, 'travel')} />
                     </td>
 
                     <td>
-                        <input type='number' value={categoricalBudget.entertainment} onChange={(e) => setCategoricalBudget(e.target.value, 'entertainment')} />
+                        <input type='number' id='entertainment' value={categoricalBudget.entertainment} onChange={(e) => setCategoricalBudget(e.target.value, 'entertainment')} />
                     </td>
                 </tr>
             </tbody>

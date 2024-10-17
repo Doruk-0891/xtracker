@@ -45,10 +45,26 @@ button {
     justify-content: space-between;
 }
 
-.text-underline {
+.title {
     text-decoration: underline;
 }
 
-.expense-form-container > form > div {
+.filters-container {
+    margin: 50px 0;
+}
 
+.filters-container > button {
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.filters-pills {
+    border: 1px solid #d8d5d5;
+    outline: none;
+    background-color: #d8d5d5;
+    border-radius: 1rem;
+}
+
+.filters-pills:hover {
+    background-color: #b7b6b6;
 }

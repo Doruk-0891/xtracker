@@ -4,6 +4,8 @@ import BalanceTable from './BalanceTable/BalanceTable';
 import {useSelector, useDispatch} from 'react-redux';
 import {updateUserName, updateMonthlyBudget, updateCategoricalBudget, resetAllBudgetChanges} from '../../reducers/userSlice';
 import { useNavigate } from 'react-router-dom';
+import { resetAllTransactions } from '../../reducers/transactionsSlice';
+import { resetAllExpenseChanges } from '../../reducers/expenseSlice';
 
 const NewTrackerPage = () => {
     const dispatch = useDispatch();
@@ -60,6 +62,8 @@ const NewTrackerPage = () => {
     const startNewTracker = () => {
         alert('This will delete all previous transactions');
         dispatch(resetAllBudgetChanges());
+        dispatch(resetAllTransactions());
+        dispatch(resetAllExpenseChanges());
     }
 
     const navigateToTrackerPage = () => navigate('/tracker');
@@ -68,15 +72,15 @@ const NewTrackerPage = () => {
     <div className='container'>
         <h2>Welcome to your own Expense Tracker</h2>
         <h4>Please fill in the form below to start tracking</h4>
-        <form className='form-container' onSubmit={(e) => e.preventDefault()}>
+        <form name='landing-page-form' className='form-container' onSubmit={(e) => e.preventDefault()}>
             <div>
-                <label htmlFor='username'>Enter your name: </label>
-                <input id='username' type='text' value={userName} onChange={setUserName} />
+                <label htmlFor='name'>Enter your name: </label>
+                <input id='name' type='text' value={userName} onChange={setUserName} />
             </div>
 
             <div>
-                <label htmlFor='totalbudget'>Enter your monthly budget: </label>
-                <input type='number' id='totalbudget' value={monthlyBudget} onChange={setMonthlyBudget} />
+                <label htmlFor='budget'>Enter your monthly budget: </label>
+                <input type='number' id='budget' value={monthlyBudget} onChange={setMonthlyBudget} />
             </div>
 
             <BalanceTable categoricalBudget={categoricalBudget} setCategoricalBudget={setCategoricalBudget} />
@@ -90,7 +94,7 @@ const NewTrackerPage = () => {
                 {
                     categoricalBudget['others'] !== '' && 
                     <>
-                        <button onClick={startNewTracker}>Start New Tracker</button>          
+                        <button id='clear' onClick={startNewTracker}>Start New Tracker</button>          
                         <button onClick={navigateToTrackerPage}>Go back</button>
                     </>
                 }

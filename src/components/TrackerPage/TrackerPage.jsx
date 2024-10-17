@@ -18,7 +18,7 @@ const TrackerPage = () => {
     <div className='tracker-container'>
       <div className='header'>
         <h2>{userName}'s Monthly Expenditure</h2>
-        <button onClick={navigateToNewTrackerPage}>New/Update Tracker</button>
+        <button id='new-update' onClick={navigateToNewTrackerPage}>New/Update Tracker</button>
       </div>
       <ExpenseTable />
       <hr />
